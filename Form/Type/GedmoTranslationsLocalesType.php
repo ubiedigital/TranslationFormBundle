@@ -26,7 +26,7 @@ class GedmoTranslationsLocalesType extends AbstractType
 
         foreach ($options['locales'] as $locale) {
             if (isset($options['fields_options'][$locale])) {
-                $builder->add($locale, 'a2lix_translationsFields', array(
+                $builder->add($locale, TranslationsFieldsType::class, array(
                     'fields' => $options['fields_options'][$locale],
                     'translation_class' => $options['translation_class'],
                     'inherit_data' => $isDefaultTranslation,
